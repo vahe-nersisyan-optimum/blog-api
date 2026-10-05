@@ -77,19 +77,19 @@ export async function create({ userId, title, content, tags }) {
 }
 
 async function attachTags(client, postId, tagNames) {
-  for (const name of tagNames) {
-    const { rows } = await client.query(
-      `INSERT INTO tags (name) VALUES ($1)
+  if (tagNames.length === 0) return;
+  await client.query(
+    `WITH tag_rows AS (
+       INSERT INTO tags (name)
+       SELECT DISTINCT unnest($2::text[])
        ON CONFLICT (name) DO UPDATE SET name = EXCLUDED.name
-       RETURNING id`,
-      [name]
-    );
-    await client.query(
-      `INSERT INTO post_tags (post_id, tag_id) VALUES ($1, $2)
-       ON CONFLICT DO NOTHING`,
-      [postId, rows[0].id]
-    );
-  }
+       RETURNING id
+     )
+     INSERT INTO post_tags (post_id, tag_id)
+     SELECT $1, id FROM tag_rows
+     ON CONFLICT DO NOTHING`,
+    [postId, tagNames]
+  );
 }
 
 export async function deletePost(id) {

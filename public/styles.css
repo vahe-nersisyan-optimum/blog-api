@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: #1f2328;
+  background: #f6f7f9;
+}
+
+header,
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header h1 {
+  margin: 24px 0 8px;
+  font-size: 1.75rem;
+}
+
+section {
+  background: #fff;
+  border: 1px solid #d8dde3;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #b9c0c8;
+  border-radius: 6px;
+  background: #fff;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.hint {
+  font-weight: normal;
+  color: #59636e;
+  font-size: 0.9rem;
+}
+
+button {
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button.danger {
+  background: #fff;
+  color: #b42318;
+  border-color: #e4a7a1;
+}
+
+#message {
+  margin-bottom: 20px;
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+#message:empty {
+  display: none;
+}
+
+#message.error {
+  background: #fdecea;
+  color: #8a1c12;
+  border: 1px solid #f1b5ae;
+}
+
+#message.success {
+  background: #e8f5ec;
+  color: #1c5b30;
+  border: 1px solid #a9d9b7;
+}
+
+.list-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.list-header h2 {
+  margin: 0;
+}
+
+.list-header .field {
+  margin: 0;
+  min-width: 180px;
+}
+
+#posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#posts>li {
+  border-top: 1px solid #e4e7eb;
+  padding: 14px 0;
+}
+
+#posts>li:first-child {
+  border-top: 0;
+}
+
+.post-title {
+  margin: 0;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.post-meta {
+  margin: 2px 0 8px;
+  color: #59636e;
+  font-size: 0.9rem;
+}
+
+.post-content {
+  margin: 0 0 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.tags li {
+  background: #eef2ff;
+  color: #3730a3;
+  border-radius: 999px;
+  padding: 1px 10px;
+  font-size: 0.85rem;
+}
+
+.empty {
+  color: #59636e;
+  text-align: center;
+  padding: 24px 0;
+  margin: 0;
+}
